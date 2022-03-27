@@ -1,5 +1,9 @@
 # Problem Statement 3 - Breaking down monoliths 🪨⛏️
 
+## Commands to run:
+- docker compose build
+- docker compose up -d 
+
 This problem statement has two objectives:
 - Get familiar with reading error stack trace and debugging code.
 - Convert a monolith architecture based docker-compose application into a microservices based architecture.  
