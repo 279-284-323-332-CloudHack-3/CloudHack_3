@@ -50,6 +50,25 @@ services:
       sample:
         aliases:
           - division-service
+
+  modservice:
+    build: ./modservice  # path is relative to docker-compose.yml location
+    hostname: modservice
+    ports:
+      - 5055:5055  # host:container
+    networks:
+      sample:
+        aliases:
+          - modservice
+  exponentservice:
+    build: ./exponentservice  # path is relative to docker-compose.yml location
+    hostname: exponentservice
+    ports:
+      - 5056:5056  # host:container
+    networks:
+      sample:
+        aliases:
+          - exponentservice
   # Add more services below
 networks:
   sample:
