@@ -22,6 +22,13 @@ def exponent(n1, n2):
     response = requests.get(exp_url)
     return response.json()['result']
 
+def greater_than(n1, n2):
+    URL = 'http://greater-than-service:'
+    port = 5057
+    div_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
+    response = requests.get(div_url)
+    return response.json()['result']
+
 
 def add(n1, n2):
     URL = 'http://add-service:'
@@ -51,6 +58,8 @@ def divide(n1, n2):
     response = requests.get(div_url)
     return response.json()['result']
 
+
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     try: 
@@ -76,6 +85,8 @@ def index():
         result = modulus(number_1, number_2)
     elif operation=='exponent':
         result = exponent(number_1, number_2)
+    elif operation=='greater_than':
+        result = greater_than(number_1, number_2)
 
     flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
 
