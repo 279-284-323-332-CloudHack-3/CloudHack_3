@@ -69,6 +69,15 @@ services:
       sample:
         aliases:
           - exponentservice
+  greater-than-service:
+    build: ./greater-than-service  # path is relative to docker-compose.yml location
+    hostname: greater-than-service
+    ports:
+      - 5057:5057  # host:container
+    networks:
+      sample:
+        aliases:
+          - greater-than-service
   # Add more services below
 networks:
   sample:
