@@ -13,7 +13,7 @@ class LessThan(Resource):
     def get(self, n1, n2):
         json_result = {}
 	 if int(n1) < int(n2)
-       	json_result['result'] = 1 
+       		json_result['result'] = 1 
  	 else 
 		json_result['result'] = 0
         return json_result
