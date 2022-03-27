@@ -78,6 +78,15 @@ services:
       sample:
         aliases:
           - greater-than-service
+  less_than-service:
+    build: ./less_than-service  # path is relative to docker-compose.yml location
+    hostname: less_than-service
+    ports:
+      - 5058:5058  # host:container
+    networks:
+      sample:
+        aliases:
+          - less_than-service
   # Add more services below
 networks:
   sample:
