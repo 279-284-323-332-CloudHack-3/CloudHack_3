@@ -8,6 +8,21 @@ app = Flask(__name__)
 app.secret_key = 'thisisjustarandomstring'
 
 
+def modulus(n1, n2):
+    URL = 'http://modservice:'
+    port = 5055
+    mod_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
+    response = requests.get(mod_url)
+    return response.json()['result']
+
+def exponent(n1, n2):
+    URL = 'http://exponentservice:'
+    port = 5056
+    exp_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
+    response = requests.get(exp_url)
+    return response.json()['result']
+
+
 def add(n1, n2):
     URL = 'http://add-service:'
     port = 5051
@@ -57,6 +72,10 @@ def index():
         result = multiply(number_1, number_2)
     elif operation == 'divide':
         result = divide(number_1, number_2)
+    elif operation == 'modulus':
+        result = modulus(number_1, number_2)
+    elif operation=='exponent':
+        result = exponent(number_1, number_2)
 
     flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
 
