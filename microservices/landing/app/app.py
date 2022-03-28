@@ -46,7 +46,7 @@ def add(n1, n2):
 
 def minus(n1, n2):
     URL = 'http://minus-service:'
-    port = 5052
+    port = 7001
     sub_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
     response = requests.get(sub_url)
     return response.json()['result']
