@@ -67,11 +67,12 @@ def index():
         number_2 = request.form.get('second')
         number_2=int(number_2)
         number_1=int(number_1)
+        operation = request.form.get('operation')
     except TypeError as typerr:
         number_2=0
         number_1=0
+        operation='add'
     
-    operation = request.form.get('operation')
     result = 0
     if operation == 'add':
         result = add(number_1, number_2)
