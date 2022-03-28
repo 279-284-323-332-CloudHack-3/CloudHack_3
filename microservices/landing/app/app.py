@@ -28,6 +28,13 @@ def greater_than(n1, n2):
     div_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
     response = requests.get(div_url)
     return response.json()['result']
+ 
+def less_than(n1, n2):
+    URL = 'http://less-than-service:'
+    port = 5058
+    div_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
+    response = requests.get(div_url)
+    return response.json()['result']
 
 
 def add(n1, n2):
@@ -88,6 +95,8 @@ def index():
         result = exponent(number_1, number_2)
     elif operation=='greater_than':
         result = greater_than(number_1, number_2)
+    elif operation=='less_than':
+        result = less_than(number_1, number_2)
 
     flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
 
