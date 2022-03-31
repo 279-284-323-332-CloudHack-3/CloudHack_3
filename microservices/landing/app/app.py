@@ -29,14 +29,6 @@ def greater_than(n1, n2):
     response = requests.get(div_url)
     return response.json()['result']
  
-def less_than(n1, n2):
-    URL = 'http://less-than-service:'
-    port = 5058
-    div_url = URL + str(port) + '/' + str(n1) + '/' + str(n2)
-    response = requests.get(div_url)
-    return response.json()['result']
-
-
 def add(n1, n2):
     URL = 'http://add-service:'
     port = 5051
@@ -65,8 +57,6 @@ def divide(n1, n2):
     response = requests.get(div_url)
     return response.json()['result']
 
-
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     try: 
@@ -79,7 +69,7 @@ def index():
         number_2=0
         number_1=0
         operation='add'
-    
+    flag=1
     result = 0
     if operation == 'add':
         result = add(number_1, number_2)
@@ -88,15 +78,18 @@ def index():
     elif operation == 'multiply':
         result = multiply(number_1, number_2)
     elif operation == 'divide':
-        result = divide(number_1, number_2)
+	    if(number_2==0):
+		    flag=0
+		    flash(f'Division by 0 is not possible.')
+	    else:
+		    result = divide(number_1, number_2)
     elif operation == 'modulus':
         result = modulus(number_1, number_2)
     elif operation=='exponent':
         result = exponent(number_1, number_2)
     elif operation=='greater_than':
+        flash(f'0 implies False, 1 implies True.')
         result = greater_than(number_1, number_2)
-    elif operation=='less_than':
-        result = less_than(number_1, number_2)
 
     flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
 
