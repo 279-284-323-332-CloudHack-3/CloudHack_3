@@ -3,10 +3,11 @@
 ## Team members and tasks:
 | SRN | Name | Tasks | Additional tasks |
 | --- | ---- | ----- | -----------------|
-| PES1UG19CS279 | Moulya T | Task 2.1 Addition service | Changing port of minus-service |
-| PES1UG19CS284 | Muskan Kothari | Task 0, 1, 2.1 Additional Service | Adding GCD service |
-| PES1UG19CS323 | Pragna Bhargava | Task 2.1 Additional Service | Changing port of a service |
-| PES1UG19CS332 | Parimala S | Task 2.0 | |
+| PES1UG19CS279 | Moulya T | Task 2.1 | Changing port of minus-service to 7001 |
+| PES1UG19CS284 | Muskan Kothari | Task 0, 1, 2.1 | Adding GCD service |
+| PES1UG19CS323 | Parimala S | Task 2.0 | Adding LCM service |
+| PES1UG19CS332 | Pragna Bhargava | Task 2.1 | Changing port of add service to 6001 |
+
 
 Date of presentation and viva: during lab hour March 28, 2022.
 
