@@ -1,52 +1,23 @@
 # Problem Statement 3 - Breaking down monoliths 🪨⛏️
 
+## Team members and tasks:
+| SRN | Name | Tasks | Additional tasks |
+| --- | ---- | ----- | -----------------|
+| PES1UG19CS279 | Moulya T | Task 2.1 Addition service | Changing port of minus-service |
+| PES1UG19CS284 | Muskan Kothari | Task 0, 1, 2.1 Additional Service | Adding GCD service |
+| PES1UG19CS323 | Pragna Bhargava | Task 2.1 Additional Service | Changing port of a service |
+| PES1UG19CS332 | Parimala S | Task 2.0 | |
+
+Date of presentation and viva: during lab hour March 28, 2022.
+
 ## Commands to run:
-- docker compose build
-- docker compose up -d 
+- docker-compose build
+- docker-compose up -d 
 
 This problem statement has two objectives:
 - Get familiar with reading error stack trace and debugging code.
 - Convert a monolith architecture based docker-compose application into a microservices based architecture.  
 
-## Requirements:
-- [docker](https://docs.docker.com/engine/) and [docker-compose](https://docs.docker.com/compose/install/). Follow the guides based on your operating system.
-- Internet. Pull docker image `python:3.8-alpine` beforehand to avoid connectivity issues.
-
-## Initial directory structure
-```
-├── README.md
-├── docs
-│   └── <documentation related images/files>
-├── microservices
-│   ├── Docker-compose.yaml
-│   ├── landing
-│   │   ├── app
-│   │   │   ├── app.py
-│   │   │   ├── requirements.txt
-│   │   │   └── templates
-│   │   │       └── index.html
-│   │   └── Dockerfile
-│   │
-```
-## Monolith architecture diagram
-<p align="center">
-  <img src="docs/microservices-initial.drawio.png" />
-</p>
-
-## Build & Run
-```
-# under the microservices directory
-# NOTE: For any code changes to be reflected, the build command must be rerun, and then up
-docker-compose build
-# run without the -d flag incase you want to observe the logs
-docker-compose up -d
-```
-### To stop the services in detached mode
-```
-docker-compose down
-```
-
-**NOTE**: It is possible your first build will not be successful and that's alright. Read the stack trace and debug the errors. The resources and links provided within the manual are sufficient to successfully complete the project.
 
 ## Tasks
 0. ### Task-0 - Completing the code 👨‍💻👩‍💻
@@ -100,25 +71,7 @@ docker-compose down
       - ```equal```: return ```True``` if the first value is equal to the second else ```False```
 
 
-## Microservices-based architecture diagram
-<p align="center">
-  <img src="docs/microservices-final.drawio.png" />
-  
-<h7 align="center">The diagram only shows the services already defined within the microservice architecture for visualization purposes. You still need to add services of your own.</h7>
 
-</p>
-
-
-## Miscellaneous
-- Directory structure of additional arithmetic microservices you will be adding:
-```
-├── <name of the service>
-│   ├── Dockerfile           # same as landing/Dockerfile
-│   ├── app
-│   │   ├── app.py           # TODO: by yourself
-│   │   └── requirements.txt # same as landing/app/requirements.txt
-│   │  
-```
 
 
 
